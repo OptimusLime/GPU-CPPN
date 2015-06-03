@@ -32,57 +32,22 @@
 //| The fact that you are presently reading this means that you have
 //| had knowledge of the CeCILL license and that you accept its terms.
 
-
-#ifndef EVAL_GPU_EVALUATE_HPP_
-#define EVAL_GPU_EVALUATE_HPP_
-
-#include <sferes/parallel.hpp>
-
 // For the CUDA runtime routines (prefixed with "cuda_")
 #include <cuda_runtime.h>
 #include <cuda.h>
-// #include "gpu_evaluate.cu"
 
-//#ifndef BOOST_MPI_HAS_NOARG_INITIALIZATION
-//#error MPI need arguments (we require a full MPI2 implementation)
-//#endif
+__global__ void
+  vectorAdd(const float *A, const float *B, float *C, int numElements)
+  {
+      int i = blockDim.x * blockIdx.x + threadIdx.x;
 
-namespace sferes {
-
-  namespace eval {
-    SFERES_CLASS(GpuEvaluate) {
-    public:
-      GpuEvaluate() {
-        
-        //here we establish everything we need for copying CPPNs to the GPU
-        //That means we launch certain values
-        
-
-
-      }
-
-      template<typename Phen>
-      void eval(std::vector<boost::shared_ptr<Phen> >& pop,
-                size_t begin, size_t end) {
-        
-        //We will loop through and load the various CPPNs onto the GPU in batches -- k thx
-       // Error code to check return values for CUDA calls
-          cudaError_t err = cudaSuccess;
-
-      }
-
-      ~GpuEvaluate()
+      if (i < numElements)
       {
-       
+          C[i] = A[i] + B[i];
       }
-
-   
-
-    protected:
-
-    };
-
   }
-}
 
-#endif
+
+
+
+

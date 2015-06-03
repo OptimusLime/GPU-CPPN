@@ -37,6 +37,7 @@
 import Options
 import copy
 import os, glob, types
+import cuda
 import sferes
 import tbb
 import sys
@@ -67,6 +68,7 @@ def set_options(opt):
     opt.tool_options('mpi')
     opt.tool_options('eigen3')
     opt.tool_options('unittest')
+    #opt.tool_options'nvcc(')
 
     # sferes specific
     opt.add_option('--bullet', type='string', help='path to bullet', dest='bullet')
@@ -89,6 +91,8 @@ def set_options(opt):
     for i in modules:
         print 'module : [' + i + ']'
         opt.sub_options(i)
+
+    #cuda.set_options(opt)
 
 
 def configure(conf):
@@ -182,7 +186,18 @@ def configure(conf):
     # modules
     for i in modules:
         conf.sub_config(i)
+    
+    # load cuda libraries
+    # cuda.configure(conf)
+    conf.check_tool('cuda', tooldir='.')
+    # conf.check_tool('nvcc')
 
+     # nvcc cuda check
+    if (len(conf.env['LIB_CUDA']) != 0):
+        conf.env['CUDA_ENABLED'] = True
+    else:
+        conf.env['CUDA_ENABLED'] = False
+    
     # link flags
     if Options.options.libs:
         conf.env.append_value("LINKFLAGS", "-L" + Options.options.libs)
@@ -225,6 +240,7 @@ def configure(conf):
     print' * CXX: ' + str(conf.env['CXX_NAME'])
     print 'boost version: ' + str(conf.env['BOOST_VERSION'])
     print 'mpi: ' + str(conf.env['MPI_ENABLED'])
+    print 'cuda: ' + str(conf.env['CUDA_ENABLED'])
     print "Compilation flags :"
     conf.setenv('default')
     print " * default:"

@@ -1,10 +1,28 @@
 
 #! /usr/bin/env python
+
+def configure(conf):
+	# conf.load('compiler_cxx') # cuda does not compile in c mode
+
+	# the tests will fail if the libraries cannot be found
+	# try pre_setting some variables, like this
+	# conf.env.LIBPATH_CUDA = ['c:\\foo\\bar\\lib']
+	# conf.env.INCLUDES_CUDA = ['c:\\foo\\bar\\includes']
+
+	conf.load('cuda', tooldir='.')
+
 def build(bld):
+	
+
     obj = bld.new_task_gen('cxx', 'program')
-    obj.source = 'gpu_map_elites.cpp'
+    obj.source = 'eval/gpu_evaluate.cu gpu_map_elites.cpp'
     obj.includes = '. ../../ /usr/local/cuda/include'
     obj.uselib_local = 'sferes2'
-    obj.uselib = 'BOOST EIGEN3'
+    obj.uselib = 'CUDA CUDART BOOST EIGEN3'
     obj.cxxflags = ['-std=c++11']
     obj.target = 'images'
+    obj.env.LIB_CUDA = ['cuda', 'cudart']
+    obj.env.LIBPATH_CUDA = ['/usr/local/cuda/lib']
+    obj.env.INCLUDES_CUDA = ['/usr/local/cuda/include']
+    obj.env.RPATH_CUDA   = ['/usr/local/cuda/lib']
+
