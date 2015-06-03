@@ -1,0 +1,132 @@
+
+# Read from  at Tue Jun  2 16:10:10 2015
+
+ N 10
+ initialX 10
+    0.5     0.5     0.5     0.5     0.5
+    0.5     0.5     0.5     0.5     0.5
+
+ initialStandardDeviations 10
+    0.3     0.3     0.3     0.3     0.3
+    0.3     0.3     0.3     0.3     0.3
+
+ seed 1593674882
+ stopMaxFunEvals 152100
+ stopMaxIter 15210
+ stopFitness
+ stopTolFun 1e-12
+ stopTolFunHist 1e-13
+ stopTolX 0
+ stopTolUpXFactor 1000
+ lambda 10
+ mu 5
+ weights   log
+ cs 0.329872
+ damps 1.32921
+ ccumcov 0.285714
+ mucov 3.41477
+ ccov 0.0324601
+ diagonalCovarianceMatrix 0
+ updatecov 0.308071
+ maxTimeFractionForEigendecompostion 0.2
+ resume                                                        _no_
+
+
+# Read from  at Tue Jun  2 16:10:41 2015
+
+ N 10
+ initialX 10
+    0.5     0.5     0.5     0.5     0.5
+    0.5     0.5     0.5     0.5     0.5
+
+ initialStandardDeviations 10
+    0.3     0.3     0.3     0.3     0.3
+    0.3     0.3     0.3     0.3     0.3
+
+ seed 1593672127
+ stopMaxFunEvals 152100
+ stopMaxIter 15210
+ stopFitness
+ stopTolFun 1e-12
+ stopTolFunHist 1e-13
+ stopTolX 0
+ stopTolUpXFactor 1000
+ lambda 10
+ mu 5
+ weights   log
+ cs 0.329872
+ damps 1.32921
+ ccumcov 0.285714
+ mucov 3.41477
+ ccov 0.0324601
+ diagonalCovarianceMatrix 0
+ updatecov 0.308071
+ maxTimeFractionForEigendecompostion 0.2
+ resume                                                        _no_
+
+
+# Read from  at Tue Jun  2 16:18:22 2015
+
+ N 10
+ initialX 10
+    0.5     0.5     0.5     0.5     0.5
+    0.5     0.5     0.5     0.5     0.5
+
+ initialStandardDeviations 10
+    0.3     0.3     0.3     0.3     0.3
+    0.3     0.3     0.3     0.3     0.3
+
+ seed 1593717119
+ stopMaxFunEvals 152100
+ stopMaxIter 15210
+ stopFitness
+ stopTolFun 1e-12
+ stopTolFunHist 1e-13
+ stopTolX 0
+ stopTolUpXFactor 1000
+ lambda 10
+ mu 5
+ weights   log
+ cs 0.329872
+ damps 1.32921
+ ccumcov 0.285714
+ mucov 3.41477
+ ccov 0.0324601
+ diagonalCovarianceMatrix 0
+ updatecov 0.308071
+ maxTimeFractionForEigendecompostion 0.2
+ resume                                                        _no_
+
+
+# Read from  at Tue Jun  2 16:18:54 2015
+
+ N 10
+ initialX 10
+    0.5     0.5     0.5     0.5     0.5
+    0.5     0.5     0.5     0.5     0.5
+
+ initialStandardDeviations 10
+    0.3     0.3     0.3     0.3     0.3
+    0.3     0.3     0.3     0.3     0.3
+
+ seed 1593720295
+ stopMaxFunEvals 152100
+ stopMaxIter 15210
+ stopFitness
+ stopTolFun 1e-12
+ stopTolFunHist 1e-13
+ stopTolX 0
+ stopTolUpXFactor 1000
+ lambda 10
+ mu 5
+ weights   log
+ cs 0.329872
+ damps 1.32921
+ ccumcov 0.285714
+ mucov 3.41477
+ ccov 0.0324601
+ diagonalCovarianceMatrix 0
+ updatecov 0.308071
+ maxTimeFractionForEigendecompostion 0.2
+ resume                                                        _no_
+

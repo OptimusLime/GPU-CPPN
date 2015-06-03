@@ -1,0 +1,10 @@
+
+#! /usr/bin/env python
+def build(bld):
+    obj = bld.new_task_gen('cxx', 'program')
+    obj.source = 'gpu_map_elites.cpp'
+    obj.includes = '. ../../ /usr/local/cuda/include'
+    obj.uselib_local = 'sferes2'
+    obj.uselib = 'BOOST EIGEN3'
+    obj.cxxflags = ['-std=c++11']
+    obj.target = 'images'
